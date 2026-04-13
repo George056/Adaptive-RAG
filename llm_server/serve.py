@@ -99,7 +99,15 @@ def get_model_and_tokenizer():
             hf_device_map = {"shared": 1, "encoder": 0, "decoder": 1, "lm_head": 1}
         else:
             hf_device_map = "auto"
-        model = AutoModelForSeq2SeqLM.from_pretrained(model_name, revision="main", device_map=hf_device_map)
+        print(f"Loading {model_name} in 8-bit mode...")   # helpful log
+
+        model = AutoModelForSeq2SeqLM.from_pretrained(
+            model_name,
+            revision="main",
+            device_map=hf_device_map,
+            load_in_8bit=True,           # ← This enables 8-bit quantization
+            torch_dtype=torch.float16,   # Good companion to 8-bit
+        )
         tokenizer = AutoTokenizer.from_pretrained(model_name)
 
     elif model_shortname.startswith("flan-t5") and model_shortname.endswith("-bf16"):
