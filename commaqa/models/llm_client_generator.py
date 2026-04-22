@@ -236,10 +236,6 @@ class LLMClientGenerator:
         generated_texts = modified_texts
 
         output_seq_score = [(text, 1 / (index + 1)) for index, text in enumerate(generated_texts)]
-        # print(prompt)
-        # print("------------")
-        # print(output_seq_score[0][0])
 
-        # TODO: Deal with output-probabilities if needed.
 
         return sorted(output_seq_score, key=lambda x: x[1])

@@ -33,8 +33,6 @@ def main():
     )
     parser.add_argument("--silent", action="store_true", help="silent")
     parser.add_argument('--set_name', type=str, help="set_name", required=True)
-    # TODO
-    # llm_port_num
     parser.add_argument(
         '--llm_port_num', type=str, help="llm_port_num", required=True
     )

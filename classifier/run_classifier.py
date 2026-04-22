@@ -387,8 +387,6 @@ def main():
 
 
     # Make one log on every process with the configuration for debugging.
-    # TODO
-    # Setup logging
     logging.basicConfig(        
         filename=args.output_dir+'/logs.log', # 
         filemode='w',

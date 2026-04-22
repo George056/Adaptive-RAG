@@ -97,7 +97,6 @@ class MultiStepEnd2EndTransformerRCPredictor(MultiStepTransformerRCPredictor):
                 ['wikipedia_id', 'paragraph_indices', 'paragraph_text']
             )
         ]
-        # TODO: I should get predicted_support_probs indexed into common_contexts. Not needed for now.
 
         branching_constituent_outputs = [{
             "question_text": question_text,

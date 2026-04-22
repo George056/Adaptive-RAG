@@ -152,7 +152,7 @@ def attach_data_annotations(
         for reasoning_step in reasoning_steps:
 
             # First, try to match it to the context_paragraphs.
-            assert len(reasoning_step["paragraphs"]) == 1  # TODO: Make it single entry only.
+            assert len(reasoning_step["paragraphs"]) == 1  
             gold_paragraph = reasoning_step["paragraphs"][0]
 
             assert "title" in gold_paragraph, f"Field `title` missing in annotation for {question_id}"

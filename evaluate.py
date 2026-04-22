@@ -536,8 +536,6 @@ def main():
         "--official", action="store_true", default=False, help="use official eval scripts when available."
     )
     parser.add_argument('--set_name', type=str, help="set_name", required=True)
-    # TODO
-    # llm_port_num
     parser.add_argument(
         '--llm_port_num', type=str, help="llm_port_num", required=True
     )
@@ -636,8 +634,6 @@ def main():
     with open(ground_truth_in_dict_file_path, "w") as file:
         json.dump(id_to_ground_truths, file, indent=4)
 
-    # TODO
-    # Save the zero single multi classification results
     id_to_zero_single_multi_classification = {}
     dict_zero_single_multi = {
         'ircot' : 'multi',

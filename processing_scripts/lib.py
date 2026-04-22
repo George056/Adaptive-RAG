@@ -25,8 +25,6 @@ def get_llm_server_address(llm_port_num : str):
         raise Exception(f"LLM Server address filepath ({llm_server_address_config_filepath}) not available.")
     llm_server_address_config = json.loads(_jsonnet.evaluate_file(llm_server_address_config_filepath))
     llm_server_address_config = {key: str(value) for key, value in llm_server_address_config.items()}
-    # TODO
-    #import pdb; pdb.set_trace()
     llm_server_address_config['port'] = llm_port_num
     return llm_server_address_config
 

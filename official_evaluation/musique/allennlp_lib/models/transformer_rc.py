@@ -191,7 +191,6 @@ class TransformerRC(Model):
                 output_dict["loss"] += answer_span_loss
                 self._avg_answer_span_loss(answer_span_loss)
 
-                # TODO: Move these in metrics area?
                 self._span_accuracy(best_spans, answer_span_labels)
                 self._span_start_accuracy(best_spans[:, 0], answer_span_labels[:, 0])
                 self._span_end_accuracy(best_spans[:, 1], answer_span_labels[:, 1])
@@ -373,7 +372,7 @@ class TransformerRC(Model):
 
     def _answer_span_to_string(
             self,
-            answer_span: torch.Tensor, # TODO: Fix, it can be both numpy.arra or torch.Tensor
+            answer_span: torch.Tensor, 
             context_span: torch.IntTensor,
             metadatum: Dict[str, Any],
         ) -> str:

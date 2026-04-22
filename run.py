@@ -974,8 +974,6 @@ def main():
     base_parser.add_argument(
         '--set_name', type=str, help="set_name", required=True
     )
-    # TODO
-    # llm_port_num
     base_parser.add_argument(
         '--llm_port_num', type=str, help="llm_port_num", required=True
     )
@@ -1165,7 +1163,6 @@ def main():
 
         local_names = copy.deepcopy(names)
         for key, value in variable_replacements.items():
-            # TODO: assert value doesn't have non-alphanumeric chars. If so, remove them.
             value_name = value.replace('"', "")
             local_names.append(f"{key}__{value_name}")
 

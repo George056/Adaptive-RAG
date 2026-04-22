@@ -5,7 +5,6 @@ import math
 import random
 import string
 
-# TODO make configurable
 reverse_letters = True
 num_examples = 100
 length_range = range(4, 5)
