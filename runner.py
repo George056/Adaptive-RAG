@@ -30,8 +30,7 @@ def main():
             "delete_predictions",
         },
     )
-    # TODO
-    # llm_port_num
+
     parser.add_argument(
         "--llm_port_num",
         type=str,
